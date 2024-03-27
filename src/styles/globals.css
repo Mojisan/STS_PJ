@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../../public/fonts/Inter-Regular.ttf");
+}
+
+@font-face {
+  font-family: "FC Iconic";
+  src: url("../../public/fonts/FC Iconic Regular.ttf");
+}
