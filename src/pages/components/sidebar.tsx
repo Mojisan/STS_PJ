@@ -32,14 +32,14 @@ const Sidebar = () => {
                 </Stack>
                 <Stack direction={"column"} marginTop="24px">
                     {drawnerList.map((item) => (
-                        <Link href={item.href} key={item.name} style={{textDecoration: "none"}}>
+                        <Button href={item.href} key={item.name} style={{ display: "flex", justifyContent: "flex-start", alignItems: "center" }}>
                             <Stack direction={"row"} alignItems="center">
                                 <Box padding="8px 12px">
                                     <Image src={item.logo} alt="icon" width={24} height={24}/>
                                 </Box>
                                 <Typography variant="button">{item.name}</Typography>
                             </Stack>
-                        </Link>
+                        </Button>
                     ))}
                 </Stack>
             </Box>

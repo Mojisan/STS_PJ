@@ -1,0 +1,47 @@
+{
+    "dataChart": [
+      {"id": "1", "label": "การมองเห็น", "value": 500},
+      {"id": "2", "label": "ได้ยินหรือสื่อความหมาย", "value": 420},
+      {"id": "3", "label": "เคลื่อนไหวหรือทางร่างกาย", "value": 820},
+      {"id": "4", "label": "จิตใจหรือพฤติกรรม", "value": 500},
+      {"id": "5", "label": "สติปัญญา", "value": 400},
+      {"id": "6", "label": "การเรียนรู้", "value": 600},
+      {"id": "7", "label": "ออทิสติก", "value": 700}
+    ],
+    "dataPie": [
+      {"id": "1", "value": 30, "label": "ระดับการศึกษา", "color": "#00338D"},
+      {"id": "2", "value": 20, "label": "กำลังศึกษา", "color": "#5476B3"},
+      {"id": "3", "value": 40, "label": "ไม่ได้เรียน", "color": "#E6EBF4"}
+    ],
+    "dataUseApp": [
+      {"id": "1", "label": "Daily Tasks", "value": 128, "logo": "/images/icons/logoex.png", "per": 34},
+      {"id": "2", "label": "Trace & Share", "value": 128, "logo": "/images/icons/logoex.png", "per": 34},
+      {"id": "3", "label": "Kare Application", "value": 128, "logo": "/images/icons/logoex.png", "per": 34},
+      {"id": "4", "label": "Communications", "value": 128, "logo": "/images/icons/logoex.png", "per": 34}
+    ],
+    "dataUser": [
+      {"id": "1", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "2", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "3", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "4", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "5", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "6", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "7", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "8", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "9", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "10", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "11", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "12", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "13", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "14", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "15", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "16", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "17", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "18", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "19", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "20", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "21", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
+      {"id": "22", "name": "นาย ยายาย ยายยายี", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]}
+    ],
+    "num": 160
+  }  

@@ -3,7 +3,8 @@ import { Box, Button, Divider, Stack, ThemeProvider, Typography } from '@mui/mat
 import { AxisConfig, BarChart, PieChart } from '@mui/x-charts';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
+import DialogList from './dialog';
 
 type ChartType = {
     id: string,
@@ -127,27 +128,30 @@ const UseAppText = ({ data }:any) => {
     );
 }
 
-const Dashboard = (/*{ tab, info }:any*/) => {
-    const dataChart:ChartType[] = [
-        {id: '1' ,label: 'การมองเห็น', value: 500},
-        {id: '2' ,label: 'ได้ยินหรือสื่อความหมาย', value: 420},
-        {id: '3' ,label: 'เคลื่อนไหวหรือทางร่างกาย', value: 820},
-        {id: '4' ,label: 'จิตใจหรือพฤติกรรม', value: 500},
-        {id: '5' ,label: 'สติปัญญา', value: 400},
-        {id: '6' ,label: 'การเรียนรู้', value: 600},
-        {id: '7' ,label: 'ออทิสติก', value: 700},
-    ]
-    const dataPie: PieType[] = [
-        { id: "1", value: 30, label: 'ระดับการศึกษา', color: '#00338D' },
-        { id: "2", value: 20, label: 'กำลังศึกษา', color: '#5476B3' },
-        { id: "3", value: 40, label: 'ไม่ได้เรียน', color: '#E6EBF4' },
-    ];
-    const dataUseApp: UseAppType[] = [
-        { id: '1' ,label: 'Daily Tasks', value: 128, logo: '/images/icons/logoex.png', per: 34 },
-        { id: '2' ,label: 'Trace & Share', value: 128, logo: '/images/icons/logoex.png', per: 34 },
-        { id: '3' ,label: 'Kare Application', value: 128, logo: '/images/icons/logoex.png', per: 34 },
-        { id: '4' ,label: 'Communications', value: 128, logo: '/images/icons/logoex.png', per: 34 },
-    ]
+const Dashboard = ({ tab, info }:any) => {
+    const [open, setOpen] = useState(false);
+    const [popup, setPopup] = useState("");
+
+    const handleClose = () => {
+        setOpen(false)
+    }
+
+    const handleOpen1 = () => {
+        setOpen(true)
+        setPopup("haveCard")
+    }
+    const handleOpen2 = () => {
+        setOpen(true)
+        setPopup("rateAges")
+    }
+    const handleOpen3 = () => {
+        setOpen(true)
+        setPopup("")
+    }
+    const handleOpen4 = () => {
+        setOpen(true)
+        setPopup("")
+    }
 
   return (
     <ThemeProvider theme={theme}>
@@ -166,22 +170,22 @@ const Dashboard = (/*{ tab, info }:any*/) => {
                 <Stack border={'1px solid #E6EBF4'} borderRadius={8} padding={"24px"} width={"1160px"} height={"296px"} boxSizing={'border-box'}>
                     <Stack direction={'row'} justifyContent={'space-between'} marginBottom={"24px"}>
                         <Typography variant='h5'>สวัสดิการ</Typography>
-                        <Button variant='text'>
+                        <Link href={'/'} style={{textDecoration: "none"}} onClick={handleOpen1}>
                             <Typography variant='h6' fontWeight={600} color={'primary'}>ดูรายชื่อ</Typography>
-                        </Button>
+                        </Link>
                     </Stack>
-                    <Bar data={dataChart}/>
+                    <Bar data={info.dataChart}/>
                 </Stack>
                 <Stack border={'1px solid #E6EBF4'} borderRadius={8} height={"296px"} width={"360px"} padding={"24px"} boxSizing={'border-box'}>
                     <Stack direction={'row'} justifyContent={'space-between'} marginBottom={"24px"}>
                         <Typography variant='h5'>วุฒิการศึกษา</Typography>
-                        <Button variant='text'>
+                        <Link href={'/'} style={{textDecoration: "none"}} onClick={handleOpen2}>
                             <Typography variant='h6' fontWeight={600} color={'primary'}>ดูรายชื่อ</Typography>
-                        </Button>
+                        </Link>
                     </Stack>
                     <Stack width={'100%'} justifyContent={'center'} alignItems={'center'}>
-                        <Pie data={dataPie}/>
-                        <LabelPie data={dataPie}/>
+                        <Pie data={info.dataPie}/>
+                        <LabelPie data={info.dataPie}/>
                     </Stack>
                 </Stack>
             </Stack>
@@ -189,23 +193,24 @@ const Dashboard = (/*{ tab, info }:any*/) => {
                 <Stack width={"1160px"} height={"296px"}>
                     <Stack direction={'row'} justifyContent={'space-between'} marginBottom={"16px"} alignItems={'center'}>
                         <Typography variant='h5'>สวัสดิการ</Typography>
-                        <Link href={'/'} style={{textDecoration: "none"}}>
-                            <Typography variant='h6' fontWeight={600} color={'primary'} textAlign={'right'}>ดูรายชื่อ</Typography>
+                        <Link href={'/'} style={{textDecoration: "none"}} onClick={handleOpen3}>
+                            <Typography variant='h6' fontWeight={600} color={'primary'}>ดูรายชื่อ</Typography>
                         </Link>
                     </Stack>
-                    <BarText data={dataChart}/>
+                    <BarText data={info.dataChart}/>
                 </Stack>
                 <Stack height={"296px"} width={"360px"}>
                     <Stack direction={'row'} justifyContent={'space-between'} marginBottom={"16px"} alignItems={'center'}>
                         <Typography variant='h5'>การใช้งานแอปพลิเคชัน</Typography>
-                        <Link href={'/'} style={{textDecoration: "none"}}>
+                        <Link href={'/'} style={{textDecoration: "none"}} onClick={handleOpen4}>
                             <Typography variant='h6' fontWeight={600} color={'primary'}>ดูรายชื่อ</Typography>
                         </Link>
                     </Stack>
-                    <UseAppText data={dataUseApp}/>
+                    <UseAppText data={info.dataUseApp}/>
                 </Stack>
             </Stack>
         </Stack>
+        <DialogList open={open} close={handleClose} type={popup} info={info}/>
     </ThemeProvider>
   )
 }

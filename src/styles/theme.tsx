@@ -7,22 +7,32 @@ const theme = createTheme({
             light: "#fff"
         },
         secondary: {
-            main: "#f0a0a5"
+            main: "#F7F9FC"
         },
     },
     typography: {
     },
+    components: {
+        MuiTextField: {
+          styleOverrides: {
+            root: {
+              fontSize: '16px',
+              borderRadius: '8px'
+            },
+          },
+        },
+      },
 })
 
 theme.typography.button = {
-    fontSize: "16px",
+    fontSize: "20px",
     fontFamily: "FC Iconic",
     fontWeight: 600,
     color: "#212529"
 }
 
 theme.typography.caption = {
-    fontSize: "10px",
+    fontSize: "14px",
     fontFamily: "FC Iconic",
     fontWeight: 500,
     color: "#212529"
@@ -43,7 +53,7 @@ theme.typography.h2 = {
 }
 
 theme.typography.h3 = {
-    fontSize: "28px",
+    fontSize: "32px",
     fontFamily: "FC Iconic",
     fontWeight: 600,
     lineHeight: 1.2,
@@ -58,21 +68,21 @@ theme.typography.body1 = {
 }
 
 theme.typography.body2 = {
-    fontSize: "1.35vw",
-    fontFamily: "Inter",
-    fontWeight: 300,
+    fontSize: "16px",
+    fontFamily: "FC Iconic",
+    fontWeight: 400,
     color: "#212529"
 }
 
 theme.typography.h6 = {
-    fontSize: "14px",
+    fontSize: "18px",
     fontFamily: "FC Iconic",
     fontWeight: 500,
     color: "#212529"
 }
 
 theme.typography.h5 = {
-    fontSize: "20px",
+    fontSize: "24px",
     fontFamily: "FC Iconic",
     fontWeight: 600,
     color: "#212529"

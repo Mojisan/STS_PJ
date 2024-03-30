@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Buttons from './buttons'
 import { TabContext, TabList, TabPanel } from '@mui/lab'
 import Dashboard from './dashboard'
+import info from '../../../public/datas/info.json'
 
 const Overview_ui = () => {
     const [tabs, setTabs] = useState("1")
@@ -35,11 +36,11 @@ const Overview_ui = () => {
                             <Tab label="การสนับสนุนจากรัฐ" value="4" />
                             <Tab label="ที่อยู่อาศัย" value="5" />
                         </TabList>
-                        <TabPanel value="1"><Dashboard/></TabPanel>
-                        <TabPanel value="2">Item 2</TabPanel>
-                        <TabPanel value="3">Item 3</TabPanel>
-                        <TabPanel value="4">Item 4</TabPanel>
-                        <TabPanel value="5">Item 4</TabPanel>
+                        <TabPanel value="1"><Dashboard tab={1} info={info}/></TabPanel>
+                        <TabPanel value="2"><Dashboard tab={2} info={info}/></TabPanel>
+                        <TabPanel value="3"><Dashboard tab={3} info={info}/></TabPanel>
+                        <TabPanel value="4"><Dashboard tab={4} info={info}/></TabPanel>
+                        <TabPanel value="5"><Dashboard tab={5} info={info}/></TabPanel>
                     </TabContext>
                 </Box>
             </Stack>
