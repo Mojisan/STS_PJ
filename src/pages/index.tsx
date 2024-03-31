@@ -1,16 +1,21 @@
-import { Box, Button, Grid, Stack } from "@mui/material";
+import { Box, Button, Grid, Stack, ThemeProvider } from "@mui/material";
 import Sidebar from "./components/sidebar";
 import { useState } from "react";
 import Overview_ui from "./components/overview_ui";
+import theme from "@/styles/theme";
+import LeftLogin from "./components/leftLogin";
+import LoginContent from "./components/loginContent";
 
 export default function Home() {
   
 
   return (
     <>
-      <Sidebar/>
-        <Stack direction={"row"} marginLeft={"312px"}>
-            <Overview_ui/>
-      </Stack>
+        <ThemeProvider theme={theme}>
+          <Stack direction={'row'}>
+            <LeftLogin/>
+            <LoginContent/>
+          </Stack>
+        </ThemeProvider>
     </>
 )}

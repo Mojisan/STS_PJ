@@ -6,6 +6,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
 import SearchBar from './searchBar';
+import Dropdown from './dropdown';
+import Popup from './popup';
 
 type data = {
     id: string,
@@ -21,85 +23,265 @@ type data = {
 
 const HaveCard = ({ info, close, num }:any) => {
     return(
-        <Stack spacing={2}>
-            <Stack spacing={2}>
-                <Stack justifyContent={'space-between'} direction={'row'} alignContent={'flex-start'}>
-                    <Stack spacing={1}>
-                        <Typography variant='h5' fontWeight={500}>ผู้มีบัตรพิการ</Typography>
-                        <Typography variant='button' color={'#616366'} fontWeight={400}>จำนวนทั้งหมด {num} คน</Typography>
-                    </Stack>
-                    <IconButton onClick={close}>
-                        <CloseIcon/>
-                    </IconButton>
-                </Stack>
-                <Stack direction={'row'} width={'100%'} justifyContent={'center'}>
-                    <SearchBar/>
-                </Stack>
-            </Stack>
-            <Stack>
-                <Box padding={'8px 0px'}>
-                    <Typography variant='body2' color={'#616366'}>ชื่อ-นามสกุล</Typography>
-                </Box>
-                <Stack marginBottom={'10px'} height={'442px'}>
-                    {info.map((item:data) => (
-                        <Box key={item.id}>
-                            <Stack justifyContent={'space-between'} direction={'row'} alignItems={'center'} padding={'12px 0px'}>
-                                <Stack direction={'row'} alignItems={'center'} spacing={2}>
-                                    <Image src={item.img} alt='profile' width={48} height={48}/>
-                                    <Typography variant='button' fontWeight={500}>{item.name}</Typography>
-                                </Stack>
-                                <IconButton>
-                                    <Image src={'/images/icons/download.png'} alt='icon' width={20} height={20}/>
-                                </IconButton>
-                            </Stack>
-                            <Divider/>
-                        </Box>
-                    ))}
-                </Stack>
-            </Stack>
-        </Stack>
+        <Popup 
+        info={info} 
+        close={close} 
+        num={num}  
+        label={'ผู้มีบัตรพิการ'}/>
     );
 }
 
-const RateAges = ({ info, close, num }:any) => {
+const RateAges = ({ info, close, num, option }:any) => {
     return(
-        <Stack spacing={2}>
-            <Stack spacing={2}>
-                <Stack justifyContent={'space-between'} direction={'row'} alignContent={'flex-start'}>
-                    <Stack spacing={1}>
-                        <Typography variant='h5' fontWeight={500}>ผู้มีบัตรพิการ</Typography>
-                        <Typography variant='button' color={'#616366'} fontWeight={400}>จำนวนทั้งหมด {num} คน</Typography>
-                    </Stack>
-                    <IconButton onClick={close}>
-                        <CloseIcon/>
-                    </IconButton>
-                </Stack>
-                <Stack direction={'row'} width={'100%'} justifyContent={'center'}>
-                    <SearchBar/>
-                </Stack>
-            </Stack>
-            <Stack>
-                <Box padding={'8px 0px'}>
-                    <Typography variant='body2' color={'#616366'}>ชื่อ-นามสกุล</Typography>
-                </Box>
-                <Stack marginBottom={'10px'} height={'442px'}>
-                    {info.map((item:data) => (
-                        <Box key={item.id}>
-                            <Stack justifyContent={'space-between'} direction={'row'} alignItems={'center'} padding={'12px 0px'}>
-                                <Stack direction={'row'} alignItems={'center'} spacing={2}>
-                                    <Image src={item.img} alt='profile' width={48} height={48}/>
-                                    <Typography variant='button' fontWeight={500}>{item.name}</Typography>
-                                </Stack>
-                                <IconButton>
-                                    <Image src={'/images/icons/download.png'} alt='icon' width={20} height={20}/>
-                                </IconButton>
-                            </Stack>
-                            <Divider/>
-                        </Box>
-                    ))}
-                </Stack>
-            </Stack>
-        </Stack>
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.rateAge} 
+        auto={true}
+        label={'อายุเฉลี่ยผู้มีบัตร'} 
+        label2={'เลือกช่วงอายุ'} 
+        label3={'อายุ'}
+        />
+    )
+}
+
+const Educate = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.educate} 
+        auto={true}
+        label={'วุฒิการศึกษา'} 
+        label2={'เลือกวุฒิการศึกษา'} 
+        label3={'วุฒิการศึกษา'}
+        />
+    )
+}
+const TypeS = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'ประเภทความพิการ'} 
+        label2={'เลือกประเภทความพิการ'} 
+        label3={'ประเภทความพิการ'}
+        />
+    )
+}
+const UseApp = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'การใช้แอปพลิเคชัน'} 
+        label2={'เลือกแอปพลิเคชัน'} 
+        label3={'แอปพลิเคชัน'}
+        />
+    )
+}
+const Benefit = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'สวัสดิการที่ได้รับ'} 
+        label2={'เลือกสวัสดิการที่ได้รับ'} 
+        label3={'สวัสดิการที่ได้รับ'}
+        />
+    )
+}
+const Career = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'การประกอบอาชีพ'} 
+        label2={'เลือกประเภทอาชีพ'} 
+        label3={'ประเภทอาชีพ'}
+        />
+    )
+}
+const InComeNum = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'จำนวนรายได้ผู้พิการ'} 
+        label2={'เลือกจำนวนรายได้'} 
+        label3={'รายได้ (บาท)'}
+        />
+    )
+}
+const InCome = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'รายได้ผู้พิการ'} 
+        label2={'เลือกรายได้'} 
+        label3={'รายได้'}
+        />
+    )
+}
+const Career2 = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'ข้อมูลอาชีพ'} 
+        label2={'เลือกอาชีพ'} 
+        label3={'อาชีพ'}
+        />
+    )
+}
+const Skill1 = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'ทักษะพื้นฐานการดำรงชีวิต'} 
+        label2={'เลือกทักษะพื้นฐานการดำรงชีวิต'} 
+        label3={'ทักษะพื้นฐานการดำรงชีวิต'}
+        />
+    )
+}
+const Skill2 = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'ทักษะเทคโนโลยี'} 
+        label2={'เลือกทักษะเทคโนโลยี'} 
+        label3={'ทักษะเทคโนโลยี'}
+        />
+    )
+}
+const Skill3 = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'ทักษะความสามารถพิเศษ'} 
+        label2={'เลือกทักษะความสามารถพิเศษ'} 
+        label3={'ทักษะความสามารถพิเศษ'}
+        />
+    )
+}
+const Skill4 = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'ทักษะที่ต้องการการสนับสนุน'} 
+        label2={'เลือกทักษะที่ต้องการการสนับสนุน'} 
+        label3={'ทักษะที่ต้องการการสนับสนุน'}
+        />
+    )
+}
+const Health = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'สาธารณสุข'} 
+        label2={'เลือกสาธารณสุข'} 
+        label3={'สาธารณสุข'}
+        />
+    )
+}
+const Health2 = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'สภาพความเดือดร้อน'} 
+        label2={'เลือกสภาพความเดือดร้อน'} 
+        label3={'สภาพความเดือดร้อน'}
+        />
+    )
+}
+const Health4 = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'สวัสดิการสังคม'} 
+        label2={'เลือกสวัสดิการสังคม'} 
+        label3={'สวัสดิการสังคม'}
+        />
+    )
+}
+const Home1 = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'ปรับปรุงบ้าน'} 
+        label2={'เลือกปรับปรุงบ้าน'} 
+        label3={'ปรับปรุงบ้าน'}
+        />
+    )
+}
+const Home2 = ({ info, close, num, option }:any) => {
+    return(
+        <Popup
+        info={info} 
+        close={close} 
+        num={num} 
+        option={option.typeS} 
+        auto={true}
+        label={'ส่วนที่ปรับปรุงบ้าน'} 
+        label2={'เลือกส่วนที่ปรับปรุงบ้าน'} 
+        label3={'ส่วนที่ปรับปรุงบ้าน'}
+        />
     )
 }
 
@@ -132,7 +314,45 @@ const DialogList = ({ open, close, type, info }:any) => {
             {type == 'haveCard'
                 ? <HaveCard close={close} info={paginatedData} num={info.num}/> 
             : type == "rateAges"  
-                ? <RateAges close={close} info={paginatedData} num={info.num}/>
+                ? <RateAges close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "educate"  
+                ? <Educate close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "typeS"  
+                ? <TypeS close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "useApp"  
+                ? <UseApp close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "benefit"  
+                ? <Benefit close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "career"  
+                ? <Career close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "incomeNum"  
+                ? <InComeNum close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "income"  
+                ? <InCome close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "career2"  
+                ? <Career2 close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "skill1"  
+                ? <Skill1 close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "skill2"  
+                ? <Skill2 close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "skill3"  
+                ? <Skill3 close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "skill4"  
+                ? <Skill4 close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "health"  
+                ? <Health close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "health2"  
+                ? <Health2 close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "health3"  
+                ? <Career close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "health4"  
+                ? <Health4 close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "health5"  
+                ? <Educate close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "home1"  
+                ? <Home1 close={close} info={paginatedData} num={info.num} option={info}/>
+            : type == "home2"  
+                ? <Home2 close={close} info={paginatedData} num={info.num} option={info}/>
             : "Hello"     
             }
             <Stack spacing={2} width={'100%'} height={'100%'} display={'flex'} alignItems={'center'} marginTop={'10px'} justifyContent={'end'}>

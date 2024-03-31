@@ -9,7 +9,7 @@ const SearchBar = ({ onSearch }:any) => {
     <OutlinedInput
     startAdornment={<InputAdornment position="start"><SearchIcon/></InputAdornment>}
     placeholder='ค้นหาชื่อ'
-    sx={{fontFamily: 'FC Iconic', borderRadius: '8px', width: '592px', height: '48px'}}
+    sx={{fontFamily: 'FC Iconic', borderRadius: '8px', width: '100%', height: '48px'}}
     size='small'
     />
   )

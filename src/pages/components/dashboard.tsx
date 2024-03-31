@@ -1,142 +1,21 @@
 import theme from '@/styles/theme'
-import { Box, Button, Divider, Stack, ThemeProvider, Typography } from '@mui/material'
-import { AxisConfig, BarChart, PieChart } from '@mui/x-charts';
-import Image from 'next/image';
-import Link from 'next/link';
+import { Box, Stack, ThemeProvider, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import DialogList from './dialog';
+import BarChartContent from './barChartContent';
+import PieChartContent, { PieType } from './pieChartContent';
+import TextChart1 from './textChart1';
+import TextChart2 from './textChart2';
+import Link from 'next/link';
 
-type ChartType = {
-    id: string,
-    label: string,
-    value: number
-}
-
-type PieType = {
-    id: string,
-    label: string,
-    value: number,
-    color: string
-}
-
-type UseAppType = {
-    id: string,
-    label: string,
-    value: number,
-    logo: string,
-    per: number
-}
-
-const Bar = ({ data }:any) => {
-    const uData = data.map((item:ChartType) => item.value);
-    const xLabels = data.map((item:ChartType) => item.label);
-
-    return(
-        <BarChart
-        width={1160}
-        height={296}
-        colors={['#00338D']}
-        layout="vertical"
-        grid={{horizontal: true}}
-        series={[
-            { data: uData },
-        ]}
-        xAxis={[{ 
-            data: xLabels, 
-            scaleType: 'band',
-            categoryGapRatio: 0.6,
-        }]}
-        />
-    );
-}
-
-const BarText = ({ data }:any) => {
-    return(
-        <Stack direction={'column'}>
-            {data.map((item:ChartType) => (
-                <Box key={item.id}>
-                    <Stack direction={'row'} justifyContent={'space-between'} padding={'12px 0px'} boxSizing={'border-box'}>
-                        <Typography variant='button' fontWeight={400}>{item.id}. {item.label}</Typography>
-                        <Typography variant='button' fontWeight={500}>{item.value} คน</Typography>
-                    </Stack>
-                    <Divider/>
-                </Box>
-            ))}
-        </Stack>
-    );
-}
-
-const Pie = ({ data }:any) => {
-    const colors = data.map((item:PieType) => item.color)
-
-    return(
-        <PieChart
-        colors={colors}
-        series={[
-            {
-              data,
-              innerRadius: 40,
-              outerRadius: 80,
-            },
-          ]}
-        margin={{ right: 5 }}
-        width={160}
-        height={160}
-        slotProps={{
-            legend: { hidden: true },
-        }}
-        />
-    );
-}
-
-const LabelPie = ({ data }:any) => {
-    return(
-        <Stack direction={'row'} spacing={1} paddingTop={'16px'}>
-            {data.map((item:PieType) => (
-                <Stack key={item.id} direction={'row'} spacing={0.5} alignItems={'center'}>
-                    <Box width={'8px'} height={'8px'} bgcolor={item.color} borderRadius={'9999px'}></Box>
-                    <Typography variant='h6' color={'#475467'}>{item.label}</Typography>
-                </Stack>
-            ))}
-        </Stack>
-    );
-}
-
-const UseAppText = ({ data }:any) => {
-    return(
-        <Stack direction={'column'}>
-            {data.map((item:UseAppType) => (
-                <Box key={item.id}>
-                    <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
-                        <Stack direction={'row'} alignItems={'center'} spacing={1} padding={'12px 0px'}>
-                            <Box padding={'2px 0px'}>
-                                <Image src={item.logo} alt={'logo'} width={40} height={40}/>
-                            </Box>
-                            <Box>
-                                <Typography variant='h6' color={'#616366'} marginBottom={'4px'}>{item.label}</Typography>
-                                <Typography variant='button'>{item.value} คน</Typography>
-                            </Box>
-                        </Stack>
-                        <Stack>
-                            <Typography variant='button' color={'#A3A7AD'} fontWeight={400}>{item.per}%</Typography>
-                        </Stack>
-                    </Stack>
-                    <Divider/>
-                </Box>
-            ))}
-        </Stack>
-    );
-}
-
-const Dashboard = ({ tab, info }:any) => {
+const Dashboard1 = ({ data }:any) => {
     const [open, setOpen] = useState(false);
     const [popup, setPopup] = useState("");
-
     const handleClose = () => {
         setOpen(false)
     }
 
-    const handleOpen1 = () => {
+    const handleOpen = () => {
         setOpen(true)
         setPopup("haveCard")
     }
@@ -144,73 +23,302 @@ const Dashboard = ({ tab, info }:any) => {
         setOpen(true)
         setPopup("rateAges")
     }
-    const handleOpen3 = () => {
-        setOpen(true)
-        setPopup("")
-    }
-    const handleOpen4 = () => {
-        setOpen(true)
-        setPopup("")
-    }
 
-  return (
-    <ThemeProvider theme={theme}>
-        <Stack direction={'column'} spacing={2}>
+    return(
+        <>
+            <Stack direction={'column'} spacing={2}>
             <Stack direction={'row'} spacing={5}>
                 <Box>
-                    <Typography variant='h6'>จำนวนผู้มีบัตรพิการ</Typography>
-                    <Typography variant='h5' marginTop="8px">30 คน</Typography>
+                    <Link href={""} style={{textDecoration: "none"}} onClick={handleOpen}>
+                        <Typography variant='h6'>จำนวนผู้มีบัตรพิการ</Typography>
+                        <Typography variant='h5' marginTop="8px">30 คน</Typography>
+                    </Link>
                 </Box>
                 <Box>
-                    <Typography variant='h6'>อายุเฉลี่ยของผู้มีบัตร</Typography>
-                    <Typography variant='h5' marginTop="8px">16 ปี</Typography>
+                    <Link href={""} style={{textDecoration: "none"}} onClick={handleOpen2}>
+                        <Typography variant='h6'>อายุเฉลี่ยของผู้มีบัตร</Typography>
+                        <Typography variant='h5' marginTop="8px">16 ปี</Typography>
+                    </Link>
                 </Box>
             </Stack>
             <Stack direction={'row'} spacing={2}>
-                <Stack border={'1px solid #E6EBF4'} borderRadius={8} padding={"24px"} width={"1160px"} height={"296px"} boxSizing={'border-box'}>
-                    <Stack direction={'row'} justifyContent={'space-between'} marginBottom={"24px"}>
-                        <Typography variant='h5'>สวัสดิการ</Typography>
-                        <Link href={'/'} style={{textDecoration: "none"}} onClick={handleOpen1}>
-                            <Typography variant='h6' fontWeight={600} color={'primary'}>ดูรายชื่อ</Typography>
-                        </Link>
-                    </Stack>
-                    <Bar data={info.dataChart}/>
-                </Stack>
-                <Stack border={'1px solid #E6EBF4'} borderRadius={8} height={"296px"} width={"360px"} padding={"24px"} boxSizing={'border-box'}>
-                    <Stack direction={'row'} justifyContent={'space-between'} marginBottom={"24px"}>
-                        <Typography variant='h5'>วุฒิการศึกษา</Typography>
-                        <Link href={'/'} style={{textDecoration: "none"}} onClick={handleOpen2}>
-                            <Typography variant='h6' fontWeight={600} color={'primary'}>ดูรายชื่อ</Typography>
-                        </Link>
-                    </Stack>
-                    <Stack width={'100%'} justifyContent={'center'} alignItems={'center'}>
-                        <Pie data={info.dataPie}/>
-                        <LabelPie data={info.dataPie}/>
-                    </Stack>
-                </Stack>
+                <BarChartContent 
+                width={1160} 
+                height={296} 
+                data={data.dataChart1} 
+                label={'สวัสดิการ'} 
+                setOpen={setOpen} 
+                setPopup={setPopup} 
+                popup="typeS"/>
+                <PieChartContent 
+                radius={160} 
+                width={'360px'} 
+                height={'296px'} 
+                data={data.dataPie1} 
+                label={'วุฒิการศึกษา'} 
+                setOpen={setOpen} 
+                setPopup={setPopup} 
+                popup="educate"/>
             </Stack>
             <Stack direction={'row'} spacing={2}>
-                <Stack width={"1160px"} height={"296px"}>
-                    <Stack direction={'row'} justifyContent={'space-between'} marginBottom={"16px"} alignItems={'center'}>
-                        <Typography variant='h5'>สวัสดิการ</Typography>
-                        <Link href={'/'} style={{textDecoration: "none"}} onClick={handleOpen3}>
-                            <Typography variant='h6' fontWeight={600} color={'primary'}>ดูรายชื่อ</Typography>
-                        </Link>
-                    </Stack>
-                    <BarText data={info.dataChart}/>
-                </Stack>
-                <Stack height={"296px"} width={"360px"}>
-                    <Stack direction={'row'} justifyContent={'space-between'} marginBottom={"16px"} alignItems={'center'}>
-                        <Typography variant='h5'>การใช้งานแอปพลิเคชัน</Typography>
-                        <Link href={'/'} style={{textDecoration: "none"}} onClick={handleOpen4}>
-                            <Typography variant='h6' fontWeight={600} color={'primary'}>ดูรายชื่อ</Typography>
-                        </Link>
-                    </Stack>
-                    <UseAppText data={info.dataUseApp}/>
-                </Stack>
+                <TextChart1 
+                label={'สวัสดิการ'} 
+                data={data.dataChart1} 
+                width={'1160px'} 
+                height={'296px'} 
+                setOpen={setOpen} 
+                setPopup={setPopup} 
+                popup="benefit"/>
+                <TextChart2 
+                label={'การใช้งานแอปพลิเคชัน'} 
+                data={data.dataUseApp1} 
+                width={'360px'} 
+                height={'296px'} 
+                setOpen={setOpen} 
+                setPopup={setPopup}
+                popup={'useApp'}
+                />
             </Stack>
         </Stack>
-        <DialogList open={open} close={handleClose} type={popup} info={info}/>
+        <DialogList open={open} close={handleClose} type={popup} info={data}/>
+        </>
+    );
+}
+
+const Dashboard2 = ({ data }:any) => {
+    const [open, setOpen] = useState(false);
+    const [popup, setPopup] = useState("");
+    const handleClose = () => {
+        setOpen(false)
+    }
+
+    return(
+        <>
+            <Stack direction={'column'} spacing={2}>
+                <Stack direction={'row'} spacing={2}>
+                    <PieChartContent 
+                    data={data.dataPie2} 
+                    radius={260} 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'จำนวนการประกอบอาชีพ'} 
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup="career"
+                    head={true}
+                    />
+                    <BarChartContent 
+                    width={760} 
+                    height={560} 
+                    data={data.dataChart2.Chart}
+                    label={'รายได้จากการประกอบอาชีพ'} 
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup='incomeNum'
+                    rate={data.dataChart2.rate}
+                    />
+                </Stack>
+                <Stack direction={'row'} spacing={2}>
+                    <PieChartContent 
+                    data={data.dataPie3} 
+                    radius={260} 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'รายได้'} 
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup="income"
+                    head={true}
+                    />
+                    <TextChart1 
+                    label={'ข้อมูลการประกอบอาชีพ'} 
+                    data={data.dataChart3} 
+                    width={'760px'} 
+                    height={'560px'} 
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup="career2"
+                    line={true}
+                    />
+                </Stack>
+            </Stack>
+            <DialogList open={open} close={handleClose} type={popup} info={data}/>
+        </>
+    );
+}
+
+const Dashboard3 = ({ data }:any) => {
+    const [open, setOpen] = useState(false);
+    const [popup, setPopup] = useState("");
+    const handleClose = () => {
+        setOpen(false)
+    }
+
+    return(
+        <>
+            <Stack direction={'column'} spacing={2}>
+                <Stack direction={'row'} spacing={2}>
+                    <PieChartContent 
+                    data={data.dataPie4} 
+                    radius={260} 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'ทักษะพื้นฐานในการดำรงชีวิต'}
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    head={true} 
+                    popup={'skill1'}/>
+                    <TextChart1 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'ทักษะเทคโนโลยี'} 
+                    data={data.dataChart4} 
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup={'skill2'} 
+                    line={true}/>
+                </Stack>
+                <Stack direction={'row'} spacing={2}>
+                    <BarChartContent
+                    width={760}
+                    height={560} 
+                    data={data.dataChart4} 
+                    label={'ทักษะความสามารถพิเศษ'} 
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup={'skill3'} 
+                    />
+                    <BarChartContent
+                    width={760}
+                    height={560} 
+                    data={data.dataChart4} 
+                    label={'ทักษะอาชีพที่ต้องการสนับสนุน'} 
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup={'skill4'} 
+                    />
+                </Stack>
+            </Stack>
+            <DialogList open={open} close={handleClose} type={popup} info={data}/>
+        </>
+    );
+}
+
+const Dashboard4 = ({ data }:any) => {
+    const [open, setOpen] = useState(false);
+    const [popup, setPopup] = useState("");
+    const handleClose = () => {
+        setOpen(false)
+    }
+
+    return(
+        <>
+            <Stack direction={'column'} spacing={2}>
+                <Stack direction={'row'} spacing={2}>
+                    <PieChartContent 
+                    data={data.dataPie4} 
+                    radius={260} 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'บริการทางการแพทย์และสาธารณสุข'}
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    head={true} 
+                    popup={'health1'}/>
+                    <PieChartContent 
+                    data={data.dataPie4} 
+                    radius={260} 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'บริการด้านการศึกษา'}
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    head={true} 
+                    popup={'health5'}/>
+                </Stack>
+                <Stack direction={'row'} spacing={2}>
+                    <PieChartContent 
+                    data={data.dataPie4} 
+                    radius={260} 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'จำนวนการประกอบอาชีพ'}
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    head={true} 
+                    popup={'health3'}/>
+                    <TextChart1 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'สวัสดิการสังคม'} 
+                    data={data.dataChart4} 
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup={'health4'} 
+                    line={true}/>
+                </Stack>
+                <Stack direction={'row'} spacing={2}>
+                    <TextChart1 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'สวัสดิการสังคม'} 
+                    data={data.dataChart4} 
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup={'health2'} 
+                    line={true}/>
+                </Stack>
+            </Stack>
+            <DialogList open={open} close={handleClose} type={popup} info={data}/>
+        </>
+    );
+}
+
+const Dashboard5 = ({ data }:any) => {
+    const [open, setOpen] = useState(false);
+    const [popup, setPopup] = useState("");
+    const handleClose = () => {
+        setOpen(false)
+    }
+    return(
+        <>
+            <Stack direction={'column'} spacing={2}>
+                <Stack direction={'row'} spacing={2}>
+                    <PieChartContent 
+                    data={data.dataPie4} 
+                    radius={260} 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'ปรับปรุงบ้าน'}
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup={'home1'}/>
+                    <PieChartContent 
+                    data={data.dataPie4} 
+                    radius={260} 
+                    width={'760px'} 
+                    height={'560px'} 
+                    label={'ถ้าปรับปรุงได้ต้องการปรับปรุงส่วนใด'}
+                    setOpen={setOpen} 
+                    setPopup={setPopup} 
+                    popup={'home2'}/>
+                </Stack>
+            </Stack>
+            <DialogList open={open} close={handleClose} type={popup} info={data}/>
+        </>
+    );
+}
+
+const Dashboard = ({ tab, info }:any) => {
+  return (
+    <ThemeProvider theme={theme}>
+        {tab==1 ?<Dashboard1 data={info}/>
+        :tab==2 ?<Dashboard2 data={info}/>
+        :tab==3 ?<Dashboard3 data={info}/>
+        :tab==4 ?<Dashboard4 data={info}/>
+        :tab==5 ?<Dashboard5 data={info}/>
+        :""
+        }
     </ThemeProvider>
   )
 }

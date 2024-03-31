@@ -1,5 +1,5 @@
 {
-    "dataChart": [
+    "dataChart1": [
       {"id": "1", "label": "การมองเห็น", "value": 500},
       {"id": "2", "label": "ได้ยินหรือสื่อความหมาย", "value": 420},
       {"id": "3", "label": "เคลื่อนไหวหรือทางร่างกาย", "value": 820},
@@ -8,16 +8,16 @@
       {"id": "6", "label": "การเรียนรู้", "value": 600},
       {"id": "7", "label": "ออทิสติก", "value": 700}
     ],
-    "dataPie": [
+    "dataPie1": [
       {"id": "1", "value": 30, "label": "ระดับการศึกษา", "color": "#00338D"},
       {"id": "2", "value": 20, "label": "กำลังศึกษา", "color": "#5476B3"},
       {"id": "3", "value": 40, "label": "ไม่ได้เรียน", "color": "#E6EBF4"}
     ],
-    "dataUseApp": [
-      {"id": "1", "label": "Daily Tasks", "value": 128, "logo": "/images/icons/logoex.png", "per": 34},
-      {"id": "2", "label": "Trace & Share", "value": 128, "logo": "/images/icons/logoex.png", "per": 34},
-      {"id": "3", "label": "Kare Application", "value": 128, "logo": "/images/icons/logoex.png", "per": 34},
-      {"id": "4", "label": "Communications", "value": 128, "logo": "/images/icons/logoex.png", "per": 34}
+    "dataUseApp1": [
+      {"id": "1", "label": "Daily Tasks", "value": 128, "logo": "/images/logo/dailyTasks.webp", "per": 34},
+      {"id": "2", "label": "Trace & Share", "value": 128, "logo": "/images/logo/traceAShare.webp", "per": 34},
+      {"id": "3", "label": "Kare Application", "value": 128, "logo": "/images/logo/kare.webp", "per": 34},
+      {"id": "4", "label": "Communications", "value": 128, "logo": "/images/logo/commu.webp", "per": 34}
     ],
     "dataUser": [
       {"id": "1", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
@@ -43,5 +43,61 @@
       {"id": "21", "name": "นาย กนกพร สว่างวิทยา", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]},
       {"id": "22", "name": "นาย ยายาย ยายยายี", "img": "/images/icons/Avatar.png", "file": "", "age": 16, "educate": "ปวช.", "type": ["สติปัญญา", "การเรียนรู้"], "app": "Kare", "benefit": ["ประกันสังคม", "ฝึกอาชีพ"]}
     ],
-    "num": 160
+    "num": 160,
+    "dataPie2": [
+      {"id": "1", "value": 16, "label": "มี", "color": "#00338D"},
+      {"id": "2", "value": 30, "label": "ไม่มี", "color": "#E6EBF4"}
+    ],
+    "dataChart2": {
+      "rate": "5,001-10,000",
+      "Chart": [
+        {"id": "1", "label": "0-3,000 บาท", "value": 700},
+        {"id": "2", "label": "3,001-5000 บาท", "value": 500},
+        {"id": "3", "label": "5,001-10,000 บาท", "value": 750},
+        {"id": "4", "label": "10,001-20,000 บาท", "value": 550},
+        {"id": "5", "label": "20,001-30,000 บาท", "value": 250},
+        {"id": "6", "label": "30,001-40,000 บาท", "value": 150},
+        {"id": "7", "label": "50,001 บาท ขึ้นไป", "value": 100}
+      ]
+    },
+    "dataPie3": [
+      {"id": "1", "value": 16, "label": "ไม่ได้ประกอบอาชีพ", "color": "#00338D"},
+      {"id": "2", "value": 16, "label": "ไม่มี", "color": "#5476B3"},
+      {"id": "3", "value": 30, "label": "มี", "color": "#E6EBF4"}
+    ],
+    "dataChart3": [
+      {"id": "1", "label": "อาชีพอิสระ", "value": 128},
+      {"id": "2", "label": "รับสิทธิ์การจ้างงานในสถานประกอบการ มาตรา 33", "value": 128},
+      {"id": "3", "label": "รับสิทธิ์การจ้างงานในภาครัฐ มาตรา 33", "value": 128},
+      {"id": "4", "label": "รับสิทธิ์ด้านการส่งเสริมอาชีพสถานประกอบการมาตรา 35", "value": 128},
+      {"id": "5", "label": "รับสิทธิ์ด้านการส่งเสริมอาชีพสถานประกอบการมาตรา 35", "value": 128},
+      {"id": "6", "label": "รับสิทธิ์ส่งเสริมอาชีพของหน่วยงานภาครัฐ มาตรา 35", "value": 128}
+    ],
+    "rateAge": [
+      {"label": "5-10 ปี"},
+      {"label": "11-18 ปี"},
+      {"label": "19-25 ปี"}
+    ],
+    "educate": [
+      {"label": "ปวช."},
+      {"label": "ไม่เรียน"},
+      {"label": "ม.3"}
+    ],
+    "typeS": [
+      {"label": "สติปัญญา"},
+      {"label": "การเรียนรู้"}
+    ],
+    "dataPie4": [
+      {"id": "1", "value": 16, "label": "จำนวนความต้องการจำเป็นพิเศษสูง", "color": "#00338D"},
+      {"id": "2", "value": 16, "label": "จำนวนความต้องการจำเป็นพิเศษปานกลาง", "color": "#5476B3"},
+      {"id": "3", "value": 30, "label": "จำนวนความต้องการจำเป็นพิเศษน้อย", "color": "#E6EBF4"}
+    ],
+    "dataChart4": [
+      {"id": "1", "label": "อาชีพอิสระ", "value": 128},
+      {"id": "2", "label": "รับสิทธิ์การจ้างงานในสถานประกอบการ มาตรา 33", "value": 128},
+      {"id": "3", "label": "รับสิทธิ์การจ้างงานในภาครัฐ มาตรา 33", "value": 128},
+      {"id": "4", "label": "รับสิทธิ์ด้านการส่งเสริมอาชีพสถานประกอบการมาตรา 35", "value": 128},
+      {"id": "5", "label": "รับสิทธิ์ด้านการส่งเสริมอาชีพสถานประกอบการมาตรา 35", "value": 128},
+      {"id": "6", "label": "รับสิทธิ์ส่งเสริมอาชีพของหน่วยงานภาครัฐ มาตรา 35", "value": 128}
+    ]
   }  
