@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <>
         <ThemeProvider theme={theme}>
-          <Stack direction={'row'}>
-            <LeftLogin/>
-            <LoginContent/>
-          </Stack>
+            <Sidebar/>
+            <Stack direction={"row"} marginLeft={"312px"}>
+                    <Overview_ui/>
+            </Stack>
         </ThemeProvider>
     </>
 )}

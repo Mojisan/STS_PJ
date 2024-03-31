@@ -13,7 +13,7 @@ const LeftLogin = () => {
                 <Typography variant='h6' lineHeight={'20px'} fontWeight={600} color={'#00338D'}>มูลนิธิออทิสติกไทย</Typography>
             </Stack>
             <Stack justifyContent={'center'}>
-                <Image src={'/images/props/Graphic_Elements.png'} alt='prop' width={518} height={480}/>
+                <Image src={'/images/props/Prop1.png'} alt='prop' width={518} height={480}/>
             </Stack>
             <Stack spacing={2}>
                 <Typography variant='h6' color={'#616366'}>สนับสนุนโดย</Typography>
