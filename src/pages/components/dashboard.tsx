@@ -31,13 +31,13 @@ const Dashboard1 = ({ data }:any) => {
                 <Box>
                     <Link href={""} style={{textDecoration: "none"}} onClick={handleOpen}>
                         <Typography variant='h6'>จำนวนผู้มีบัตรพิการ</Typography>
-                        <Typography variant='h5' marginTop="8px">30 คน</Typography>
+                        <Typography variant='h5' marginTop="8px">{data.numHaveCard} คน</Typography>
                     </Link>
                 </Box>
                 <Box>
                     <Link href={""} style={{textDecoration: "none"}} onClick={handleOpen2}>
                         <Typography variant='h6'>อายุเฉลี่ยของผู้มีบัตร</Typography>
-                        <Typography variant='h5' marginTop="8px">16 ปี</Typography>
+                        <Typography variant='h5' marginTop="8px">{data.rateUser} ปี</Typography>
                     </Link>
                 </Box>
             </Stack>
@@ -97,7 +97,7 @@ const Dashboard2 = ({ data }:any) => {
             <Stack direction={'column'} spacing={2}>
                 <Stack direction={'row'} spacing={2}>
                     <PieChartContent 
-                    data={data.dataPie2} 
+                    data={data.dataCareer} 
                     radius={260} 
                     width={'760px'} 
                     height={'560px'} 
@@ -110,17 +110,17 @@ const Dashboard2 = ({ data }:any) => {
                     <BarChartContent 
                     width={760} 
                     height={560} 
-                    data={data.dataChart2.Chart}
+                    data={data.dataIncomeNum.Chart}
                     label={'รายได้จากการประกอบอาชีพ'} 
                     setOpen={setOpen} 
                     setPopup={setPopup} 
                     popup='incomeNum'
-                    rate={data.dataChart2.rate}
+                    rate={data.dataIncomeNum.rate}
                     />
                 </Stack>
                 <Stack direction={'row'} spacing={2}>
                     <PieChartContent 
-                    data={data.dataPie3} 
+                    data={data.dataIncome} 
                     radius={260} 
                     width={'760px'} 
                     height={'560px'} 
@@ -132,7 +132,7 @@ const Dashboard2 = ({ data }:any) => {
                     />
                     <TextChart1 
                     label={'ข้อมูลการประกอบอาชีพ'} 
-                    data={data.dataChart3} 
+                    data={data.dataSkill3} 
                     width={'760px'} 
                     height={'560px'} 
                     setOpen={setOpen} 
@@ -159,7 +159,7 @@ const Dashboard3 = ({ data }:any) => {
             <Stack direction={'column'} spacing={2}>
                 <Stack direction={'row'} spacing={2}>
                     <PieChartContent 
-                    data={data.dataPie4} 
+                    data={data.dataSkill1} 
                     radius={260} 
                     width={'760px'} 
                     height={'560px'} 
@@ -172,7 +172,7 @@ const Dashboard3 = ({ data }:any) => {
                     width={'760px'} 
                     height={'560px'} 
                     label={'ทักษะเทคโนโลยี'} 
-                    data={data.dataChart4} 
+                    data={data.dataSkill2} 
                     setOpen={setOpen} 
                     setPopup={setPopup} 
                     popup={'skill2'} 
@@ -182,7 +182,7 @@ const Dashboard3 = ({ data }:any) => {
                     <BarChartContent
                     width={760}
                     height={560} 
-                    data={data.dataChart4} 
+                    data={data.dataSkill3} 
                     label={'ทักษะความสามารถพิเศษ'} 
                     setOpen={setOpen} 
                     setPopup={setPopup} 
@@ -191,7 +191,7 @@ const Dashboard3 = ({ data }:any) => {
                     <BarChartContent
                     width={760}
                     height={560} 
-                    data={data.dataChart4} 
+                    data={data.dataSkill4} 
                     label={'ทักษะอาชีพที่ต้องการสนับสนุน'} 
                     setOpen={setOpen} 
                     setPopup={setPopup} 
@@ -216,7 +216,7 @@ const Dashboard4 = ({ data }:any) => {
             <Stack direction={'column'} spacing={2}>
                 <Stack direction={'row'} spacing={2}>
                     <PieChartContent 
-                    data={data.dataPie4} 
+                    data={data.dataHealth1} 
                     radius={260} 
                     width={'760px'} 
                     height={'560px'} 
@@ -226,7 +226,7 @@ const Dashboard4 = ({ data }:any) => {
                     head={true} 
                     popup={'health1'}/>
                     <PieChartContent 
-                    data={data.dataPie4} 
+                    data={data.dataHealth5} 
                     radius={260} 
                     width={'760px'} 
                     height={'560px'} 
@@ -238,7 +238,7 @@ const Dashboard4 = ({ data }:any) => {
                 </Stack>
                 <Stack direction={'row'} spacing={2}>
                     <PieChartContent 
-                    data={data.dataPie4} 
+                    data={data.dataHealth3} 
                     radius={260} 
                     width={'760px'} 
                     height={'560px'} 
@@ -251,7 +251,7 @@ const Dashboard4 = ({ data }:any) => {
                     width={'760px'} 
                     height={'560px'} 
                     label={'สวัสดิการสังคม'} 
-                    data={data.dataChart4} 
+                    data={data.dataHealth4} 
                     setOpen={setOpen} 
                     setPopup={setPopup} 
                     popup={'health4'} 
@@ -262,7 +262,7 @@ const Dashboard4 = ({ data }:any) => {
                     width={'760px'} 
                     height={'560px'} 
                     label={'สวัสดิการสังคม'} 
-                    data={data.dataChart4} 
+                    data={data.dataHealth2} 
                     setOpen={setOpen} 
                     setPopup={setPopup} 
                     popup={'health2'} 
@@ -285,7 +285,7 @@ const Dashboard5 = ({ data }:any) => {
             <Stack direction={'column'} spacing={2}>
                 <Stack direction={'row'} spacing={2}>
                     <PieChartContent 
-                    data={data.dataPie4} 
+                    data={data.dataPieEX} 
                     radius={260} 
                     width={'760px'} 
                     height={'560px'} 
@@ -294,7 +294,7 @@ const Dashboard5 = ({ data }:any) => {
                     setPopup={setPopup} 
                     popup={'home1'}/>
                     <PieChartContent 
-                    data={data.dataPie4} 
+                    data={data.dataPieEX} 
                     radius={260} 
                     width={'760px'} 
                     height={'560px'} 

@@ -25,7 +25,7 @@ const TextChart1 = ({ width, height, label, data, setOpen, setPopup, popup, line
 
   return (
     <ThemeProvider theme={theme}>
-        <Stack width={width} height={height} sx={line? style: {}}>
+        <Stack width={width} height={height} sx={line? style: {}} overflow={'hidden'}>
             <Stack direction={'row'} justifyContent={'space-between'} marginBottom={"16px"} alignItems={'center'}>
                 <Typography variant='h5'>{label}</Typography>
                 <Link href={''} style={{textDecoration: "none"}} onClick={handleOpen}>

@@ -33,8 +33,8 @@ type data = {
 
 const ArrayData = ({data}:any) => {
     return(
-        <Stack direction={'row'} alignItems={'center'}>
-            {data.map((item:string) => (
+        <Stack direction={'row'} alignItems={'center'} spacing={2}>
+            {data.map((item:any) => (
                 <Typography variant='button' fontWeight={500} key={item}>{item}</Typography>
             ))}
         </Stack>
@@ -76,23 +76,23 @@ const Popup = ({ info, close, num, option, auto=false, label, label2, label3, kw
                                     </Stack>
                                     {auto&&label3=='อายุ'?<Typography variant='button' fontWeight={500}>{item.age}</Typography>
                                     :auto&&label3=='วุฒิการศึกษา'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='ประเภทความพิการ'?<Typography variant='button' fontWeight={500}>{item.type[0]}</Typography>
+                                    :auto&&label3=='ประเภทความพิการ'?<ArrayData data={item.type} />
                                     :auto&&label3=='แอปพลิเคชัน'?<Typography variant='button' fontWeight={500}>{item.app}</Typography>
-                                    :auto&&label3=='สวัสดิการที่ได้รับ'?<Typography variant='button' fontWeight={500}>{item.benefit[0]}</Typography>
+                                    :auto&&label3=='สวัสดิการที่ได้รับ'?<ArrayData data={item.benefit} />
                                     :auto&&label3=='ประเภทอาชีพ'?<Typography variant='button' fontWeight={500}>{item.careerType}</Typography>
                                     :auto&&label3=='รายได้ (บาท)'?<Typography variant='button' fontWeight={500}>{item.incomeNum}</Typography>
                                     :auto&&label3=='รายได้'?<Typography variant='button' fontWeight={500}>{item.income}</Typography>
                                     :auto&&label3=='อาชีพ'?<Typography variant='button' fontWeight={500}>{item.career}</Typography>
                                     :auto&&label3=='ทักษะพื้นฐานการดำรงชีวิต'?<Typography variant='button' fontWeight={500}>{item.skill1}</Typography>
                                     :auto&&label3=='ทักษะเทคโนโลยี'?<Typography variant='button' fontWeight={500}>{item.skill2}</Typography>
-                                    :auto&&label3=='ทักษะความสามารถพิเศษ'?<Typography variant='button' fontWeight={500}>{item.skill3}</Typography>
-                                    :auto&&label3=='ทักษะที่ต้องการการสนับสนุน'?<Typography variant='button' fontWeight={500}>{item.skill4}</Typography>
+                                    :auto&&label3=='ทักษะความสามารถพิเศษ'?<ArrayData data={item.skill3} />
+                                    :auto&&label3=='ทักษะที่ต้องการการสนับสนุน'?<ArrayData data={item.skill4} />
                                     :auto&&label3=='สาธารณสุข'?<Typography variant='button' fontWeight={500}>{item.health1}</Typography>
                                     :auto&&label3=='สภาพความเดือดร้อน'?<Typography variant='button' fontWeight={500}>{item.health2}</Typography>
                                     :auto&&label3=='ประเภทอาชีพ'?<Typography variant='button' fontWeight={500}>{item.careerType}</Typography>
                                     :auto&&label3=='สวัสดิการสังคม'?<Typography variant='button' fontWeight={500}>{item.benefit2}</Typography>
                                     :auto&&label3=='ปรับปรุงบ้าน'?<Typography variant='button' fontWeight={500}>{item.home1}</Typography>
-                                    :auto&&label3=='ส่วนปรับปรุงบ้าน'?<Typography variant='button' fontWeight={500}>{item.home2}</Typography>
+                                    :auto&&label3=='ส่วนที่ปรับปรุงบ้าน'?<Typography variant='button' fontWeight={500}>{item.home2}</Typography>
                                     :<></>
                                     }
                                 </Stack>
