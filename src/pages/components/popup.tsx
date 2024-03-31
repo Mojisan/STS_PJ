@@ -15,7 +15,20 @@ type data = {
     educate: string,
     type: string[],
     app: string,
-    benefit: string[]
+    benefit: string[],
+    incomeNum: string,
+    income: string,
+    career: string,
+    careerType: string,
+    skill1: string,
+    skill2: string,
+    skill3: string[],
+    skill4: string[],
+    health1: string,
+    health2: string,
+    benefit2: string,
+    home1: string,
+    home2: string
 }
 
 const ArrayData = ({data}:any) => {
@@ -66,20 +79,20 @@ const Popup = ({ info, close, num, option, auto=false, label, label2, label3, kw
                                     :auto&&label3=='ประเภทความพิการ'?<Typography variant='button' fontWeight={500}>{item.type[0]}</Typography>
                                     :auto&&label3=='แอปพลิเคชัน'?<Typography variant='button' fontWeight={500}>{item.app}</Typography>
                                     :auto&&label3=='สวัสดิการที่ได้รับ'?<Typography variant='button' fontWeight={500}>{item.benefit[0]}</Typography>
-                                    :auto&&label3=='ประเภทอาชีพ'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='รายได้ (บาท)'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='รายได้'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='อาชีพ'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='ทักษะพื้นฐานการดำรงชีวิต'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='ทักษะเทคโนโลยี'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='ทักษะความสามารถพิเศษ'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='ทักษะที่ต้องการการสนับสนุน'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='สาธารณสุข'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='สภาพความเดือดร้อน'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='ประเภทอาชีพ'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='สวัสดิการสังคม'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='ปรับปรุงบ้าน'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
-                                    :auto&&label3=='ส่วนปรับปรุงบ้าน'?<Typography variant='button' fontWeight={500}>{item.educate}</Typography>
+                                    :auto&&label3=='ประเภทอาชีพ'?<Typography variant='button' fontWeight={500}>{item.careerType}</Typography>
+                                    :auto&&label3=='รายได้ (บาท)'?<Typography variant='button' fontWeight={500}>{item.incomeNum}</Typography>
+                                    :auto&&label3=='รายได้'?<Typography variant='button' fontWeight={500}>{item.income}</Typography>
+                                    :auto&&label3=='อาชีพ'?<Typography variant='button' fontWeight={500}>{item.career}</Typography>
+                                    :auto&&label3=='ทักษะพื้นฐานการดำรงชีวิต'?<Typography variant='button' fontWeight={500}>{item.skill1}</Typography>
+                                    :auto&&label3=='ทักษะเทคโนโลยี'?<Typography variant='button' fontWeight={500}>{item.skill2}</Typography>
+                                    :auto&&label3=='ทักษะความสามารถพิเศษ'?<Typography variant='button' fontWeight={500}>{item.skill3}</Typography>
+                                    :auto&&label3=='ทักษะที่ต้องการการสนับสนุน'?<Typography variant='button' fontWeight={500}>{item.skill4}</Typography>
+                                    :auto&&label3=='สาธารณสุข'?<Typography variant='button' fontWeight={500}>{item.health1}</Typography>
+                                    :auto&&label3=='สภาพความเดือดร้อน'?<Typography variant='button' fontWeight={500}>{item.health2}</Typography>
+                                    :auto&&label3=='ประเภทอาชีพ'?<Typography variant='button' fontWeight={500}>{item.careerType}</Typography>
+                                    :auto&&label3=='สวัสดิการสังคม'?<Typography variant='button' fontWeight={500}>{item.benefit2}</Typography>
+                                    :auto&&label3=='ปรับปรุงบ้าน'?<Typography variant='button' fontWeight={500}>{item.home1}</Typography>
+                                    :auto&&label3=='ส่วนปรับปรุงบ้าน'?<Typography variant='button' fontWeight={500}>{item.home2}</Typography>
                                     :<></>
                                     }
                                 </Stack>

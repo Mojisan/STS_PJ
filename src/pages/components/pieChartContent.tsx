@@ -39,7 +39,7 @@ const PieChartContent = ({ data, radius, width, height, label, setOpen, setPopup
                     </Stack>
             : <></>
             }
-            <Stack width={'100%'} justifyContent={'center'} alignItems={'center'} sx={head? {} : {marginTop: '70px'}}>
+            <Stack width={'100%'} justifyContent={'center'} alignItems={'center'} sx={!head&&label=='วุฒิการศึกษา'? {} :!head? {marginTop: '70px'}:{}}>
                 <PieChart
                 colors={colors}
                 series={[

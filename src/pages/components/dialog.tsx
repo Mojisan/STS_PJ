@@ -339,7 +339,7 @@ const DialogList = ({ open, close, type, info }:any) => {
                 ? <Skill3 close={close} info={paginatedData} num={info.num} option={info}/>
             : type == "skill4"  
                 ? <Skill4 close={close} info={paginatedData} num={info.num} option={info}/>
-            : type == "health"  
+            : type == "health1"  
                 ? <Health close={close} info={paginatedData} num={info.num} option={info}/>
             : type == "health2"  
                 ? <Health2 close={close} info={paginatedData} num={info.num} option={info}/>
