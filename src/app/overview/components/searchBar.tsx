@@ -1,0 +1,24 @@
+import {
+  Box,
+  IconButton,
+  Input,
+  InputAdornment,
+  OutlinedInput,
+  TextField
+} from '@mui/material';
+import React,
+{ useState } from 'react'
+import SearchIcon from '@mui/icons-material/Search';
+
+const SearchBar = () => {
+  return (
+    <OutlinedInput
+      startAdornment={<InputAdornment position="start"><SearchIcon /></InputAdornment>}
+      placeholder='ค้นหาชื่อ'
+      sx={{ fontFamily: 'FC Iconic', borderRadius: '8px', width: '100%', height: '48px' }}
+      size='small'
+    />
+  )
+}
+
+export default SearchBar
